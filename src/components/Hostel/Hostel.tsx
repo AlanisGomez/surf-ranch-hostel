@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { WifiIcon, HomeIcon, UsersIcon, StarIcon } from '@heroicons/react/24/outline';
 import { hostelRooms } from '@/lib/data';
 import { HostelRoom } from '@/types';
+import Image from 'next/image';
 
 const Hostel = () => {
   const features = [
@@ -14,116 +15,115 @@ const Hostel = () => {
   ];
 
   return (
-    <section id="hostel" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl sm:text-5xl font-bold text-dark mb-6">
-            BEACH HOUSE
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Una experiencia única compartiendo un hogar lejos de casa. 
-            Fusionando gastronomía y buenos momentos.
-          </p>
-        </motion.div>
+    <section id="hostel" className="py-20 bg-gray-50 relative overflow-hidden">
+      {/* Background Waves Pattern - Right Side Only */}
+      <div className="absolute inset-0 opacity-60">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='60' viewBox='0 0 80 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q20 10 40 30 T80 30' stroke='%2300b0b9' stroke-width='3' fill='none'/%3E%3Cpath d='M0 45 Q15 25 30 45 T60 45' stroke='%2300b0b9' stroke-width='2.5' fill='none'/%3E%3C/svg%3E")`,
+          backgroundSize: '80px 60px',
+          backgroundRepeat: 'repeat',
+          backgroundPosition: 'right 0',
+          clipPath: 'polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%)'
+        }} />
+      </div>
 
-        {/* Features */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
-        >
-          {features.map((feature, index) => (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Side - Content */}
+          <div>
+            {/* Header */}
             <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <feature.icon className="h-8 w-8 text-primary" />
-              </div>
-              <p className="text-dark font-medium">{feature.text}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Rooms */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {hostelRooms.map((room: HostelRoom, index) => (
-            <motion.div
-              key={room.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="mb-16"
             >
-              {/* Room Image */}
-              <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-6xl">🏠</div>
+              {/* Icono Hostel */}
+              <motion.div
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.3 }}
+                className="mb-8"
+              >
+                <div className="flex justify-center lg:justify-start">
+                  <Image
+                    src="/icon-hoste.jpg"
+                    alt="Icono Hostel"
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                  />
                 </div>
-                <div className="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full">
-                  <span className="text-sm font-semibold text-dark">{room.capacity} personas</span>
-                </div>
-              </div>
+              </motion.div>
 
-              {/* Room Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-dark mb-2">{room.name}</h3>
-                <p className="text-gray-600 mb-4">{room.description}</p>
-                
-                <div className="mb-4">
-                  <span className="text-2xl font-bold text-primary">{room.price}</span>
-                </div>
+              <h2 
+                className="text-4xl sm:text-5xl font-bold mb-6 text-left font-subjectivity"
+                style={{
+                  color: '#333333'
+                } as React.CSSProperties}
+              >
+                Hostel frente al mar
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl text-left mb-8">
+                Una experiencia única compartiendo un hogar lejos de casa.
+                <br />
+                Fusionando gastronomía y buenos momentos.
+              </p>
 
-                <div className="space-y-2 mb-6">
-                  {room.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-primary rounded-full mr-3" />
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200"
-                >
-                  Reservar
-                </motion.button>
+              {/* Features Images - Left Side Only */}
+              <div className="flex gap-4 mb-8">
+                <Image
+                  src="/icon-desaynos.jpg"
+                  alt="Desayunos"
+                  width={60}
+                  height={60}
+                  className="object-contain"
+                />
+                <Image
+                  src="/icon-heart.jpg"
+                  alt="Experiencias"
+                  width={60}
+                  height={60}
+                  className="object-contain"
+                />
+                <Image
+                  src="/icon-surf.jpg"
+                  alt="Surf"
+                  width={60}
+                  height={60}
+                  className="object-contain"
+                />
               </div>
             </motion.div>
-          ))}
+          </div>
+
+          {/* Right Side - Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            </div>
+          </motion.div>
         </div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-tertiary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-tertiary/90 transition-colors duration-200 shadow-lg"
-          >
-            VER TODAS LAS HABITACIONES
-          </motion.button>
-        </motion.div>
+
       </div>
+      
+      {/* Banner de ancho completo sobre el background de olas */}
+      <div className="relative z-10 mt-16">
+        <img 
+          src="/PALTO41.jpg" 
+          alt="Banner PALTO41" 
+          className="w-full h-80 lg:h-96 object-cover"
+        />
+      </div>
+      
     </section>
   );
 };

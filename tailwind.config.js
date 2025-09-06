@@ -15,6 +15,10 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Subjectivity Serif', 'Times New Roman', 'serif'],
+        'subjectivity': ['Subjectivity Serif', 'serif'],
+        'justus': ['Justus', 'serif'],
+        'gluten': ['Gluten', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

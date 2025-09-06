@@ -17,10 +17,13 @@ const Experiences = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-dark mb-6">
+          <h2 
+            className="text-4xl sm:text-5xl font-bold mb-6 font-justus"
+            style={{ color: '#333333' }}
+          >
             EXPERIENCIAS ÚNICAS
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-subjectivity">
             Descubre nuestros trips de surf, snow y aventura. 
             Conecta con la naturaleza y vive experiencias inolvidables.
           </p>
@@ -49,22 +52,22 @@ const Experiences = () => {
                   </div>
                 </div>
                 <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full">
-                  <span className="text-sm font-semibold text-dark">{experience.duration}</span>
+                  <span className="text-sm font-semibold text-dark font-subjectivity">{experience.duration}</span>
                 </div>
                 <div className="absolute top-4 right-4 bg-tertiary text-white px-3 py-1 rounded-full">
-                  <span className="text-sm font-semibold">{experience.price}</span>
+                  <span className="text-sm font-semibold font-subjectivity">{experience.price}</span>
                 </div>
               </div>
 
               {/* Experience Content */}
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-dark mb-3">{experience.title}</h3>
-                <p className="text-gray-600 mb-6">{experience.description}</p>
+                <h3 className="text-2xl font-bold text-dark mb-3 font-subjectivity">{experience.title}</h3>
+                <p className="text-gray-600 mb-6 font-subjectivity">{experience.description}</p>
 
                 {/* Features */}
                 <div className="space-y-2 mb-6">
                   {experience.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center text-sm text-gray-600">
+                    <div key={featureIndex} className="flex items-center text-sm text-gray-600 font-subjectivity">
                       <div className="w-2 h-2 bg-primary rounded-full mr-3" />
                       {feature}
                     </div>
@@ -76,14 +79,14 @@ const Experiences = () => {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="flex-1 bg-primary text-white py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200"
+                    className="flex-1 bg-primary text-white py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 font-subjectivity"
                   >
                     Reservar
                   </motion.button>
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="px-4 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors duration-200"
+                    className="px-4 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors duration-200 font-subjectivity"
                   >
                     Info
                   </motion.button>
@@ -92,34 +95,6 @@ const Experiences = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-20 bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-white"
-        >
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">500+</div>
-              <div className="text-white/80">Viajeros Felices</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">15+</div>
-              <div className="text-white/80">Destinos</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">3</div>
-              <div className="text-white/80">Años de Experiencia</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">98%</div>
-              <div className="text-white/80">Satisfacción</div>
-            </div>
-          </div>
-        </motion.div>
 
         {/* CTA */}
         <motion.div
@@ -132,9 +107,13 @@ const Experiences = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-tertiary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-tertiary/90 transition-colors duration-200 shadow-lg"
+            className="text-white px-8 py-4 text-lg font-semibold hover:opacity-90 transition-opacity duration-200 shadow-lg font-justus"
+            style={{
+              backgroundColor: '#333333',
+              borderRadius: '4px'
+            }}
           >
-            VER TODAS LAS EXPERIENCIAS
+            CONSULTAR
           </motion.button>
         </motion.div>
       </div>

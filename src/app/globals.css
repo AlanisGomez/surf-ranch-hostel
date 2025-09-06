@@ -1,5 +1,86 @@
 @import "tailwindcss";
 
+/* Justus Font Family */
+@font-face {
+  font-family: 'Justus';
+  src: url('/justus-cufonfonts/Justus-Roman.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Justus';
+  src: url('/justus-cufonfonts/Justus-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Justus';
+  src: url('/justus-cufonfonts/Justus-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Justus';
+  src: url('/justus-cufonfonts/Justus-ItalicOldstyle.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Justus';
+  src: url('/justus-cufonfonts/Justus-Oldstyle.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Justus';
+  src: url('/justus-cufonfonts/Justus-Versalitas.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Subjectivity Serif';
+  src: url('/fonts/SubjectivitySerif-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Subjectivity Serif';
+  src: url('/fonts/SubjectivitySerif-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Subjectivity Serif';
+  src: url('/fonts/SubjectivitySerif-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Subjectivity Serif';
+  src: url('/fonts/SubjectivitySerif-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,4 +104,92 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Forzar la aplicación de Subjectivity Serif en el menú */
+.font-subjectivity {
+  font-family: 'Subjectivity Serif', serif !important;
+}
+
+/* Clase para aplicar Justus */
+.font-justus {
+  font-family: 'Justus', serif !important;
+}
+
+/* Gluten Font Family */
+@font-face {
+  font-family: 'Gluten';
+  src: url('/Gluten/static/Gluten-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gluten';
+  src: url('/Gluten/static/Gluten-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gluten';
+  src: url('/Gluten/static/Gluten-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gluten';
+  src: url('/Gluten/static/Gluten-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gluten';
+  src: url('/Gluten/static/Gluten-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gluten';
+  src: url('/Gluten/static/Gluten-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gluten';
+  src: url('/Gluten/static/Gluten-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gluten';
+  src: url('/Gluten/static/Gluten-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gluten';
+  src: url('/Gluten/static/Gluten-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Clase para aplicar Gluten */
+.font-gluten {
+  font-family: 'Gluten', sans-serif !important;
 }

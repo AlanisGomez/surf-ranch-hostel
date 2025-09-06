@@ -160,12 +160,8 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const galleryImages: Image[] = [
-  { src: '/images/gallery-1.jpg', alt: 'Vista del hostel desde el mar' },
-  { src: '/images/gallery-2.jpg', alt: 'Terraza del café' },
-  { src: '/images/gallery-3.jpg', alt: 'Habitación con vista al mar' },
-  { src: '/images/gallery-4.jpg', alt: 'Grupo de surfistas' },
-  { src: '/images/gallery-5.jpg', alt: 'Interior del café' },
-  { src: '/images/gallery-6.jpg', alt: 'Atardecer en la playa' },
-  { src: '/images/gallery-7.jpg', alt: 'Sala común del hostel' },
-  { src: '/images/gallery-8.jpg', alt: 'Plato del menú' }
+  { src: '/habitacion-huespedes.jpeg', alt: 'Habitación de huéspedes' },
+  { src: '/Living-hostel.jpeg', alt: 'Living del hostel' },
+  { src: '/patio-surfranch.jpeg', alt: 'Patio de Surf Ranch' },
+  { src: '/vista-habitacion.jpeg', alt: 'Vista desde la habitación' }
 ];
