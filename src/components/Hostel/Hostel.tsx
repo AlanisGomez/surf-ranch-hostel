@@ -1,129 +1,177 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { WifiIcon, HomeIcon, UsersIcon, StarIcon } from '@heroicons/react/24/outline';
-import { hostelRooms } from '@/lib/data';
-import { HostelRoom } from '@/types';
 import Image from 'next/image';
 
 const Hostel = () => {
-  const features = [
-    { icon: WifiIcon, text: 'WiFi Gratuito' },
-    { icon: HomeIcon, text: 'Ubicación Privilegiada' },
-    { icon: UsersIcon, text: 'Ambiente Social' },
-    { icon: StarIcon, text: 'Atención Personalizada' },
-  ];
-
   return (
-    <section id="hostel" className="py-20 bg-gray-50 relative overflow-hidden">
-      {/* Background Waves Pattern - Right Side Only */}
-      <div className="absolute inset-0 opacity-60">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='60' viewBox='0 0 80 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q20 10 40 30 T80 30' stroke='%2300b0b9' stroke-width='3' fill='none'/%3E%3Cpath d='M0 45 Q15 25 30 45 T60 45' stroke='%2300b0b9' stroke-width='2.5' fill='none'/%3E%3C/svg%3E")`,
-          backgroundSize: '80px 60px',
-          backgroundRepeat: 'repeat',
-          backgroundPosition: 'right 0',
-          clipPath: 'polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%)'
-        }} />
-      </div>
-
+    <section 
+      id="hostel" 
+      className="relative overflow-hidden py-12" 
+      style={{ 
+        backgroundColor: '#cee7ef',
+        paddingTop: '50px',
+        paddingBottom: '50px'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Side - Content */}
-          <div>
-            {/* Header */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="mb-16"
-            >
-              {/* Icono Hostel */}
-              <motion.div
-                initial={{ opacity: 0, y: -30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.3 }}
-                className="mb-8"
-              >
-                <div className="flex justify-center lg:justify-start">
-                  <Image
-                    src="/icon-hoste.jpg"
-                    alt="Icono Hostel"
-                    width={80}
-                    height={80}
-                    className="object-contain"
-                  />
-                </div>
-              </motion.div>
-
-              <h2 
-                className="text-4xl sm:text-5xl font-bold mb-6 text-left font-subjectivity"
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mb-16 mt-4"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <h2
+                className="text-left"
                 style={{
-                  color: '#333333'
+                  fontFamily: 'Subjectivity Serif, serif',
+                  fontSize: '38px',
+                  color: 'transparent',
+                  WebkitTextStroke: '1px #ffffff',
+                  textStroke: '1px #ffffff',
+                  letterSpacing: '0.1em'
                 } as React.CSSProperties}
               >
-                Hostel frente al mar
+                llegó el momento
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl text-left mb-8">
-                Una experiencia única compartiendo un hogar lejos de casa.
-                <br />
-                Fusionando gastronomía y buenos momentos.
-              </p>
+              <Image
+                src="/icon-heart.jpg"
+                alt="Heart Icon"
+                width={80}
+                height={80}
+                className="object-contain"
+              />
+            </div>
+            <h2
+              className="font-bold"
+              style={{
+                fontFamily: 'Subjectivity Serif, serif',
+                fontSize: '50px',
+                color: 'white',
+                letterSpacing: '0.1em',
+                lineHeight: '1.2'
+              } as React.CSSProperties}
+            >
+              quedate en nuestro hogar{' '}
+              <span
+                style={{
+                  color: 'transparent',
+                  WebkitTextStroke: '2px #ffffff',
+                  textStroke: '2px #ffffff'
+                } as React.CSSProperties}
+              >
+                frente al mar
+              </span>
+            </h2>
 
-              {/* Features Images - Left Side Only */}
-              <div className="flex gap-4 mb-8">
-                <Image
-                  src="/icon-desaynos.jpg"
-                  alt="Desayunos"
-                  width={60}
-                  height={60}
-                  className="object-contain"
-                />
-                <Image
-                  src="/icon-heart.jpg"
-                  alt="Experiencias"
-                  width={60}
-                  height={60}
-                  className="object-contain"
-                />
-                <Image
-                  src="/icon-surf.jpg"
-                  alt="Surf"
-                  width={60}
-                  height={60}
-                  className="object-contain"
-                />
-              </div>
-            </motion.div>
-          </div>
+            {/* PALTO33 Image */}
+            <div className="w-full relative" style={{ marginTop: '50px', marginBottom: '32px' }}>
+              <Image
+                src="/PALTO33.jpg"
+                alt="PALTO33"
+                width={800}
+                height={600}
+                className="object-cover shadow-lg w-full"
+              />
+            </div>
+            <div 
+                  className="mt-4 p-4 text-center"
+                  style={{
+                    backgroundColor: 'white',
+                    borderRadius: '4px',
+                    marginBottom: '50px'
+                  }}
+                >
+                  <button 
+                    className="px-6 py-2 text-black font-bold text-lg font-justus"
+                    style={{
+                      backgroundColor: '#000000',
+                      color: 'white',
+                      borderRadius: '4px',
+                      border: 'none'
+                    }}
+                  >
+                    RESERVAR
+                  </button>
+            </div>
+          </motion.div>
 
-          {/* Right Side - Image */}
+          {/* Right Side - Image and Title */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative flex flex-col"
           >
-            <div className="relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            {/* Image with overlay text */}
+            <div className="relative w-full mb-12" style={{ height: '550px' }}>
+              <Image
+                src="/PALTO8 (1).jpg"
+                alt="PALTO8"
+                fill
+                className="object-cover"
+              />
+              
+              {/* Overlay text at center */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-black/40 to-transparent p-6">
+                {/* DESCRUBI ACANTILADOS Title */}
+                <h2
+                  className="text-center mb-4"
+                  style={{
+                    fontFamily: 'Subjectivity Serif, serif',
+                    fontSize: '26px',
+                    color: 'white',
+                    letterSpacing: '0.1em'
+                  } as React.CSSProperties}
+                >
+                  DESCUBRÍ ACANTILADOS
+                </h2>
+                
+                {/* SOMOS MAR Title */}
+                <h2
+                  className="text-4xl sm:text-5xl font-bold text-center font-gluten"
+                  style={{
+                    fontSize: '50px',
+                    color: 'white',
+                    letterSpacing: '0.2em'
+                  } as React.CSSProperties}
+                >
+                  SOMOS MAR
+                </h2>
+              </div>
             </div>
+
+            <h2
+              className="font-bold text-center"
+              style={{
+                fontFamily: 'Subjectivity Serif, serif',
+                fontSize: '35px',
+                color: 'white',
+                fontWeight: 'bold',
+                letterSpacing: '0.1em',
+                lineHeight: '1.5'
+              } as React.CSSProperties}
+            >
+              habitaciones compartidas y privadas
+              <br />
+              <span
+                style={{
+                  color: 'transparent',
+                  WebkitTextStroke: '1px #ffffff',
+                  textStroke: '1px #ffffff'
+                } as React.CSSProperties}
+              >
+                a tu medida
+              </span>
+            </h2>
           </motion.div>
         </div>
-
-
       </div>
-      
-      {/* Banner de ancho completo sobre el background de olas */}
-      <div className="relative z-10 mt-16">
-        <img 
-          src="/PALTO41.jpg" 
-          alt="Banner PALTO41" 
-          className="w-full h-80 lg:h-96 object-cover"
-        />
-      </div>
-      
     </section>
   );
 };

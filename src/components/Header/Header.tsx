@@ -29,11 +29,11 @@ const Header = () => {
               className="flex items-center"
             >
               <Image
-                src="/LogoSRNegro.png"
+                src="/Logo-header-negro.svg"
                 alt="Surf Ranch"
                 width={120}
                 height={40}
-                className="h-10 w-auto"
+                className="h-25 w-auto"
                 priority
               />
             </motion.div>
@@ -46,7 +46,7 @@ const Header = () => {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="text-[#333333] hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200 font-subjectivity"
+                  className="text-[#333333] hover:text-[#00b0b9] px-3 py-2 text-base font-medium transition-colors duration-200 font-subjectivity"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -87,7 +87,7 @@ const Header = () => {
                   <motion.a
                     key={item.name}
                     href={item.href}
-                    className="text-[#333333] hover:text-primary block px-3 py-2 text-base font-medium font-subjectivity"
+                    className="text-[#333333] hover:text-[#00b0b9] block px-3 py-2 text-base font-medium font-subjectivity"
                     onClick={() => setIsMenuOpen(false)}
                     whileHover={{ x: 10 }}
                   >
