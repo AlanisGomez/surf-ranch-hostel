@@ -58,43 +58,43 @@ const Cafe = () => {
               {/* Photo Grid */}
               <div className="grid grid-cols-3 gap-4 mt-8">
                 <Image
-                  src="/WhatsApp Image 2025-09-05 at 15.42.16.jpeg"
-                  alt="Café 1"
+                  src="/cafe-plato-1.jpeg"
+                  alt="Plato de Palto Café"
                   width={300}
                   height={200}
                   className="object-cover w-full h-48"
                 />
                 <Image
-                  src="/WhatsApp Image 2025-09-05 at 15.43.21.jpeg"
-                  alt="Café 2"
+                  src="/cafe-plato-2.jpeg"
+                  alt="Comida gourmet Palto"
                   width={300}
                   height={200}
                   className="object-cover w-full h-48"
                 />
                 <Image
-                  src="/WhatsApp Image 2025-09-05 at 15.44.23.jpeg"
-                  alt="Café 3"
+                  src="/cafe-plato-3.jpeg"
+                  alt="Especialidades del café"
                   width={300}
                   height={200}
                   className="object-cover w-full h-48"
                 />
                 <Image
-                  src="/WhatsApp Image 2025-09-05 at 15.45.00.jpeg"
-                  alt="Café 4"
+                  src="/cafe-plato-4.jpeg"
+                  alt="Desayunos Palto Café"
                   width={300}
                   height={200}
                   className="object-cover w-full h-48"
                 />
                 <Image
-                  src="/WhatsApp Image 2025-09-05 at 15.46.35.jpeg"
-                  alt="Café 5"
+                  src="/cafe-plato-5.jpeg"
+                  alt="Meriendas y café"
                   width={300}
                   height={200}
                   className="object-cover w-full h-48"
                 />
                 <Image
-                  src="/WhatsApp Image 2025-09-05 at 15.47.49.jpeg"
-                  alt="Café 6"
+                  src="/cafe-plato-6.jpeg"
+                  alt="Almuerzos de Palto"
                   width={300}
                   height={200}
                   className="object-cover w-full h-48"

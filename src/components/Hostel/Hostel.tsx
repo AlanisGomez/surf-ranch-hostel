@@ -12,8 +12,8 @@ const Hostel = () => {
     { src: "/Living-hostel.jpeg", alt: "Living del hostel" },
     { src: "/patio-surfranch.jpeg", alt: "Patio Surf Ranch" },
     { src: "/vista-habitacion.jpeg", alt: "Vista desde habitación" },
-    { src: "/WhatsApp Image 2025-09-05 at 15.29.23 (2).jpeg", alt: "Hostel interior" },
-    { src: "/WhatsApp Image 2025-09-05 at 15.29.23 (4).jpeg", alt: "Hostel ambiente" }
+    { src: "/hostel-interior-1.jpeg", alt: "Interior acogedor del hostel" },
+    { src: "/hostel-interior-2.jpeg", alt: "Ambiente relajado del hostel" }
   ];
 
   const nextImage = () => {
