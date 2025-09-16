@@ -193,3 +193,116 @@ body {
 .font-gluten {
   font-family: 'Gluten', sans-serif !important;
 }
+
+/* ===== RESPONSIVE UTILITIES ===== */
+
+/* Mobile First Typography */
+.text-responsive-xl {
+  @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
+}
+
+.text-responsive-lg {
+  @apply text-xl sm:text-2xl lg:text-3xl;
+}
+
+.text-responsive-md {
+  @apply text-lg sm:text-xl lg:text-2xl;
+}
+
+.text-responsive-sm {
+  @apply text-base sm:text-lg;
+}
+
+/* Responsive Spacing */
+.spacing-responsive {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+.py-responsive {
+  @apply py-8 sm:py-12 lg:py-16;
+}
+
+/* Mobile Image Optimizations */
+.img-responsive {
+  @apply w-full h-auto object-cover;
+}
+
+/* Mobile Grid Improvements */
+.grid-responsive-2 {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6;
+}
+
+.grid-responsive-3 {
+  @apply grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4;
+}
+
+/* Mobile Button Optimizations */
+.btn-responsive {
+  @apply px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg;
+}
+
+/* Mobile Touch Targets */
+.touch-target {
+  @apply min-h-[44px] min-w-[44px];
+}
+
+/* Responsive Container */
+.container-responsive {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Hide scrollbars on mobile for better UX */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+  overflow-x: hidden;
+}
+
+/* Ensure images don't break layout on mobile */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Better touch interaction on mobile */
+@media (hover: none) and (pointer: coarse) {
+  .hover\:scale-105:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* Dark mode support for mobile */
+@media (prefers-color-scheme: dark) {
+  .dark-responsive {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .high-contrast {
+    @apply border-2 border-black;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
