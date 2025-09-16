@@ -1,23 +1,41 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   const navigation = [
-    { name: 'Inicio', href: '#home' },
-    { name: 'Hostel', href: '#hostel' },
+    { name: 'Surf Hostel', href: '#hostel' },
     { name: 'Palto Café', href: '#cafe' },
-    { name: 'Experiencias', href: '#experiencias' },
     { name: 'Contacto', href: '#contacto' },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navigation.map(item => item.href.substring(1));
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      setActiveSection(currentSection ? `#${currentSection}` : '');
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <header className="w-full z-50 bg-white">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -46,7 +64,12 @@ const Header = () => {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="text-[#333333] hover:text-[#00b0b9] px-3 py-2 text-base font-medium transition-colors duration-200 font-subjectivity"
+                  className={`px-3 py-2 text-base transition-colors duration-200 font-subjectivity ${
+                    activeSection === item.href 
+                      ? 'text-[#00b0b9]' 
+                      : 'text-[#333333] hover:text-[#00b0b9]'
+                  }`}
+                  style={{ fontWeight: 600 }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -87,7 +110,12 @@ const Header = () => {
                   <motion.a
                     key={item.name}
                     href={item.href}
-                    className="text-[#333333] hover:text-[#00b0b9] block px-3 py-2 text-base font-medium font-subjectivity"
+                    className={`block px-3 py-2 text-base font-subjectivity ${
+                      activeSection === item.href 
+                        ? 'text-[#00b0b9]' 
+                        : 'text-[#333333] hover:text-[#00b0b9]'
+                    }`}
+                    style={{ fontWeight: 600 }}
                     onClick={() => setIsMenuOpen(false)}
                     whileHover={{ x: 10 }}
                   >
